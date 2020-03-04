@@ -9,7 +9,8 @@ class Form extends Component {
             pessoasFila: '',
             tempoFila: '',
             vazaoFila: '',
-            limiteFila: ''
+            duracaoFila: '',
+            dataFila: ''
         };
 
         this.state = this.initialState;
@@ -31,7 +32,7 @@ class Form extends Component {
     }
 
     render() {
-        const { nomeFila, pessoasFila, tempoFila, vazaoFila, limiteFila } = this.state; 
+        const { nomeFila, pessoasFila, tempoFila, vazaoFila, duracaoFila, dataFila } = this.state; 
 
         return (
             <form onSubmit={this.onFormSubmit}>
@@ -63,12 +64,19 @@ class Form extends Component {
                     id="vazaoFila"
                     value={vazaoFila} 
                     onChange={this.handleChange} />
-                <label for="limiteFila">Tempo Limite</label>
+                <label for="dataFila">Data</label>
                 <input 
                     type="text" 
-                    name="limiteFila" 
-                    id="limiteFila"
-                    value={limiteFila} 
+                    name="dataFila" 
+                    id="dataFila"
+                    value={dataFila} 
+                    onChange={this.handleChange} />
+                <label for="duracaoFila">Tempo Limite</label>
+                <input 
+                    type="text" 
+                    name="duracaoFila" 
+                    id="duracaoFila"
+                    value={duracaoFila} 
                     onChange={this.handleChange} />
                 <button type="submit">
                     Criar

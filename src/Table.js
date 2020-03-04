@@ -8,8 +8,10 @@ const TableHeader = () => {
                 <th>Quantidade de Pessoas</th>
                 <th>Tempo de Fila</th>
                 <th>Vazão</th>
+                <th>Data</th>
                 <th>Tempo Limite</th>
-                <th>Remove</th>
+                <th>Atualizar</th>
+                <th>Remover</th>
             </tr>
         </thead>
     );
@@ -23,8 +25,10 @@ const TableBody = props => {
                 <td>{row.pessoasFila}</td>
                 <td>{row.tempoFila}</td>
                 <td>{row.vazaoFila}</td>
-                <td>{row.limiteFila}</td>
-                <td><button onClick={() => props.removerFila(index)}>Delete</button></td>
+                <td>{row.dataFila}</td>
+                <td>{row.duracaoFila}</td>
+                <td><button onClick={() => props.atualizarFila(index)}>Atualizar</button></td>
+                <td><button onClick={() => props.removerFila(index)}>Deletar</button></td>
             </tr>
         );
     });
@@ -33,11 +37,11 @@ const TableBody = props => {
 }
 
 const Table = (props) => {
-    const { dadosFila, removerFila } = props;
+    const { dadosFila, atualizarFila, removerFila } = props;
         return (
             <table>
                 <TableHeader />
-                <TableBody dadosFila={dadosFila} removerFila={removerFila} />
+                <TableBody dadosFila={dadosFila} atualizarFila={atualizarFila} removerFila={removerFila} />
             </table>
         );
 }
