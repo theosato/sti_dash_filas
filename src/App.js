@@ -38,6 +38,7 @@ class App extends Component {
         // axios.get Broker 
         axios.get('localhost:5000/fila')
             .then((response) => {
+                console.log(response)
                 const filas = response.data;
                 this.setState({ filas });
 
