@@ -7,8 +7,8 @@ const TableHeader = () => {
                 <th>Nome da Atração</th>
                 <th>Data da Atração</th>
                 <th>Tempo Limite</th>
-                <th>Tempo de Fila</th>
                 <th>Quantidade de Pessoas</th>
+                <th>Tempo de Fila</th>
                 <th>Vazão (pessoas/hora)</th>
                 <th>Fila Ativa</th>
                 <th>Desativar/Ativar</th>

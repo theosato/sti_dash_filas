@@ -3,8 +3,8 @@ WORKDIR /app
 COPY . .
 RUN npm install react-scripts -g --silent
 RUN yarn install
+RUN yarn add axios
 RUN yarn run build
-
 FROM mhart/alpine-node
 RUN yarn global add serve
 WORKDIR /app

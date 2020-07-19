@@ -7,7 +7,7 @@ class App extends Component {
 
     state = {
         filas: [],
-        nomeEvento: "Sem Tempo, Irmão",
+        nomeEvento: "Cafézinho",
         header: {
             'Content-type':'application/json',
             'Access-Control-Allow-Origin':'*',
@@ -27,12 +27,12 @@ class App extends Component {
         .catch(console.log)
       }
 
-    updateFilaStatus = async (filaAtual, filaUpdate) => {
+    updateFila = async (filaAtual, filaUpdate) => {
         console.log(filaAtual, filaUpdate)
         let res = await axios.put(`http://localhost:5000/fila/${filaAtual.idFila}`, filaUpdate, { headers: this.state.header })
         console.log(res)
         if (res.status === 200) {
-            axios.put(`https://w3tcfvfz65.execute-api.us-east-1.amazonaws.com/dev/events/2/fila/${filaAtual.idFila}/status`, res.data, { headers: this.state.header })
+            axios.put(`https://w3tcfvfz65.execute-api.us-east-1.amazonaws.com/dev/events/2/fila`, res.data, { headers: this.state.header })
             .then((response) => {
                 console.log(response)
                 console.log(response.data)
@@ -83,7 +83,7 @@ class App extends Component {
             filaUpdate.filaAtiva = "0"
         }
     
-        this.updateFilaStatus(filaAtual, filaUpdate);
+        this.updateFila(filaAtual, filaUpdate);
     }
 
     
